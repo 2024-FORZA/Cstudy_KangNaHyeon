@@ -1,16 +1,25 @@
+#10870
 #include <stdio.h>
 int main() {
-	int n, limit, a ;
+	int n, limit, c, a = 0, b = 1;
 
-	scanf_s("%d", &limit);
+	scanf("%d", &limit);
 
+	for (n = 0; n + 1 <= limit; n++) {
+		c = a + b;
+		a = b;
+		b = c;
 
-	for (n = 2; n + 1 <= limit; n = n + 2) {
-		a=n* (n - 1);
-		a = a * (n - 1);
 	}
-
-	printf("%d", n);
+	if (limit == 0) {
+		printf("%d", 0);
+	}
+	else if (limit == 1) {
+		printf("%d", 1);
+	}
+	else if (limit >= 2) {
+		printf("%d", a);
+	}
 
 	return 0;
 }
